@@ -119,8 +119,6 @@ One of the final places we can store data, is as a contract, aka in the â€œcodeâ
 uint256 constant MY_VAR = 7;
 uint256 immutable i_myVar = 7;
 ```
-## EVM Data Structure cheat sheet
-
 
 ## Return data
 
