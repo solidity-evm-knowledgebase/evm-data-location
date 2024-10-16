@@ -45,13 +45,13 @@ To store a variable in storage we use the SSTORE opcode and to retrieve a variab
 
 For example:
 
-```
+```solidity
 contract MyContract{
 uint256 myStorageVar = 7;     // This is in storage
 
 function doStuff() public {
 	uint256 myStackVar = 7; // This is on the stack
-}
+	}
 }
 ```
 
@@ -69,7 +69,7 @@ In Solidity, only function parameters can be considered calldata because only fu
 
 ### Difference between memory and calldata in Solidity
 
-```
+```solidity
 function doStuff(string stuff) public {
 // The above will not compile, throwing an error saying:
 // TypeError: Data location must be "memory" or "calldata" for parameter in 
@@ -115,7 +115,7 @@ In the example below, the two functions can have exactly the same variable name 
 
 One of the final places we can store data, is as a contract, aka in the “code” location of the EVM. This is pretty straightforward, and it’s why using variables in solidity labeled constant and immutable are unable to be changed. They are stored in the contract bytecode itself.
 
-```
+```solidity
 uint256 constant MY_VAR = 7;
 uint256 immutable i_myVar = 7;
 ```
@@ -126,7 +126,7 @@ The return data is the way a smart contract can return a value after a call. It 
 
 Essentially, whenever you see the return keyword, that is going to create the RETURN opcode to store data into the return data location. 
 
-```
+```solidity
 function doStuff() public returns(uint256) {
 	return uint256(7);
 }
@@ -143,7 +143,7 @@ There is only one return data, and calling these opcodes will return the return 
 
 Logs are a storage location in the EVM where code is purely written. In Solidity, this is done with the emit keyword. 
 
-```
+```solidity
 event myEvent();
 emit myEvent();
 ```
@@ -154,7 +154,7 @@ In the EVM, there are many places where the EVM can read data but not write.
 
 Examples of this in Solidity:
 
-```
+```solidity
 msg.sender; 
 block.chainid;
 blobhash(0);
