@@ -109,8 +109,6 @@ It works as an isolated environment for functions to store and manipulate data. 
 
 A call context is ended when a RETURN, STOP, INVALID, or REVERT opcode is reached, or when a transaction reverts. 
 
-In the example below, the two functions can have exactly the same variable name but will never overlap. That's because each function will get its own call context, with their own stack, memory, calldata...
-
 ## Code
 
 One of the final places we can store data, is as a contract, aka in the “code” location of the EVM. This is pretty straightforward, and it’s why using variables in solidity labeled constant and immutable are unable to be changed. They are stored in the contract bytecode itself.
